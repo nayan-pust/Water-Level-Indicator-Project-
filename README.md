@@ -45,6 +45,9 @@ Image of hardware Implementation :
 
 Implemented picture
 
+![2](https://github.com/nayan-pust/Water-Level-Indicator-Project-/assets/114688354/75959e07-be29-4257-934f-0fe6993baf56)
+
+
 # CODE
 ```ruby /*
 RB0 is Trig Pin
