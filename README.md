@@ -219,4 +219,104 @@ TANK IS FULL AND MOTOR IS OFF SIMULATION RESULT
 
 # CODE mikroC 
 
+```ruby
+sbit full at P1.B0;
+sbit mid at P1.B1;
+sbit emp at P1.B2;
+sbit t2 at P1.B3;
+sbit rs at P0.B0;
+sbit rw at P0.B1;
+sbit en at P0.B2;
+sbit rly at P3.B0;
+
+void lcddata(char[], char);
+void lcdcmd(char);
+void msdelay(unsigned int);
+
+void main() {
+    rly = 0;
+    P0 = 0x00;
+    P2 = 0x00;
+    full = 1;
+    mid = 1;
+    emp = 1;
+    t2 = 1;
+
+    lcdcmd(0x38);
+    lcdcmd(0x0C);
+    lcdcmd(0x06);
+    lcdcmd(0x01);
+
+    while (1) {
+        if (t2 == 0) {
+            if (emp == 1 && mid == 1 && full == 1) {
+                rly = 1;
+                lcdcmd(0x01);
+                lcdcmd(0x80);
+                lcddata("tank is empty", 13);
+                lcdcmd(0xC0);
+                lcddata("motor is on", 11);
+            } else if (emp == 0 && mid == 1 && full == 1) {
+                rly = 1;
+                lcdcmd(0x01);
+                lcdcmd(0x80);
+                lcddata("tank filling", 12);
+                lcdcmd(0xC0);
+                lcddata("motor is on", 11);
+            } else if (emp == 0 && mid == 0 && full == 1) {
+                rly = 1;
+                lcdcmd(0x01);
+                lcdcmd(0x80);
+                lcddata("tank is mid", 11);
+                lcdcmd(0xC0);
+                lcddata("motor is on", 11);
+            } else if (full == 0 && mid == 0 && emp == 0) {
+                rly = 0;
+                lcdcmd(0x01);
+                lcdcmd(0x80);
+                lcddata("tank is full", 12);
+                lcdcmd(0xC0);
+                lcddata("motor is off", 12);
+            }
+        } else {
+            rly = 0;
+            lcdcmd(0x01);
+            lcdcmd(0x80);
+            lcddata("tank 2 empty", 12);
+            lcdcmd(0xC0);
+            lcddata("fill tank 2", 11);
+        }
+    }
+}
+
+void lcdcmd(char cmd) {
+    P2 = cmd;
+    rs = 0;
+    rw = 0;
+    en = 1;
+    msdelay(5);
+    en = 0;
+}
+
+void lcddata(char a[], char len) {
+    char x;
+
+    for (x = 0; x < len; x++) {
+        P2 = a[x];
+        rs = 1;
+        rw = 0;
+        en = 1;
+        msdelay(5);
+        en = 0;
+    }
+}
+
+void msdelay(unsigned int a) {
+    unsigned int x, y;
+
+    for (x = 0; x < a; x++)
+        for (y = 0; y < 1275; y++);
+}
+
+```
 
