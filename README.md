@@ -9,7 +9,7 @@ The main purpose of this device is to provide its users a hassle free experience
 
 # Components :
 
- *PIC16F877A Microcontroller - 1 Pc
+ -PIC16F877A Microcontroller - 1 Pc
   *Ultrasonic Sensor - 1 Pc
  *5v voltage Regulator (LM7805) - 1 Pc
  *Crystal oscillator (16 MHz) - 1
