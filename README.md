@@ -9,23 +9,18 @@ The main purpose of this device is to provide its users a hassle free experience
 
 # Components :
 
- **PIC16F877A Microcontroller - 1 Pc**
- Ultrasonic Sensor - 1 Pc
-5v voltage Regulator (LM7805) - 1 Pc
-Crystal oscillator (16 MHz) - 1
-Capacitors (22pF) - 2Pc
-Wires
-LED - 3 Pc
-5v Relay - 1 Pc
-9v Battery - 1 Pc
-Breadboard
-Software Used :
+ *PIC16F877A Microcontroller - 1 Pc
+  *Ultrasonic Sensor - 1 Pc
+ *5v voltage Regulator (LM7805) - 1 Pc
+ *Crystal oscillator (16 MHz) - 1
+ *Capacitors (22pF) - 2Pc
+ *Wires
+ *LED - 3 Pc
+ *5v Relay - 1 Pc
+ *9v Battery - 1 Pc
+ *Breadboard
+ *Software Used :
 
-Simulation (Proteus)
-Coding (MikroC)
-Simulation Design :
-
-Simulation
 
 Procedure :
 
@@ -43,12 +38,12 @@ The middle level is from 20-29 cm which will light up both yellow and red led bu
 Lastly the upper level from 10-19 cm which will light up all the led’s but not the relay as it indicated the tank is full.
 Image of hardware Implementation :
 
-Implemented picture
+# Implemented picture
 
 ![2](https://github.com/nayan-pust/Water-Level-Indicator-Project-/assets/114688354/75959e07-be29-4257-934f-0fe6993baf56)
 
 
-# CODE
+# CODE mikrC 
 ```ruby /*
 RB0 is Trig Pin
 RB1 is Echo pin
