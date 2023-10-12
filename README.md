@@ -9,7 +9,7 @@ The main purpose of this device is to provide its users a hassle free experience
 
 # Components :
 
-**PIC16F877A Microcontroller - 1 Pc**
+```ruby **PIC16F877A Microcontroller - 1 Pc**
  `#ffffff` Ultrasonic Sensor - 1 Pc
 5v voltage Regulator (LM7805) - 1 Pc
 Crystal oscillator (16 MHz) - 1
@@ -26,6 +26,7 @@ Coding (MikroC)
 Simulation Design :
 
 Simulation
+```
 
 Procedure :
 
